@@ -5,12 +5,18 @@
 This is a Geometric Algebra learning project based on the book "Geometric Algebra for Computer Science".
 
 **Code Structure:**
-- `src/chap*/EXERCISES.md` - **ALL exercises** from each chapter (152 total for Ch2-8)
-- `src/chap*/ex*/` - C++ examples (some complete, some have TODOs)
-- `src/chap*/solutions/` - Completed exercise solutions (moved into chapter folders)
-- `docs/ch_*/` - Full chapter markdown with theory
-- `docs/gasandbox_api.md` - GA Sandbox API reference
-- `figures/` - GAViewer scripts for interactive figures
+```
+src/
+├── libgasandbox/          ← GA library (5 algebras: e2ga, e3ga, h3ga, c2ga, c3ga)
+├── qhull-2003.1/          ← Convex hull library (for chap14)
+└── chap1-16/              ← Chapter examples
+    ├── EXERCISES.md       ← All exercises (152 total for Ch2-8)
+    ├── ex*/               ← Example code
+    └── solutions/         ← Completed solutions
+```
+- `docs/ch_*/` - Chapter notes (markdown)
+- `docs/gasandbox_api.md` - API reference
+- `figures/` - GAViewer .g scripts
 
 **Exercise Types:**
 - `Drill` - Computational practice

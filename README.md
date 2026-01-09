@@ -1,13 +1,22 @@
 # Geometric Algebra Project
 
 ## Directory Structure
-- **`docs/`**: Full book PDF, documentation, and `gasandbox_api.md` (API reference).
-- **`docs/chapters/`**: Split PDF chapters for focused reading.
-- **`tools/`**: Contains `gaviewer` executable.
-- **`src/`**: Contains the **GA Sandbox** C++ source code and libraries.
-- **`build/`**: Contains the compiled C++ executables (CMake out-of-source build).
-- **`figures/`**: Contains the `.g` script files for use with GAViewer. **(Covers Chapters 1-23)**
-- **`run_ex.sh`**: Helper script to run C++ examples from the root.
+```
+geometric_algebra/
+├── src/
+│   ├── libgasandbox/      ← GA library (5 algebra implementations)
+│   ├── qhull-2003.1/      ← Convex hull library (used by chap14)
+│   └── chap1-16/          ← Chapter examples and exercises
+├── build/                 ← Compiled executables (CMake)
+├── docs/
+│   ├── ch_01-08/          ← Chapter notes (markdown)
+│   ├── gasandbox_api.md   ← API reference
+│   ├── PGA4CS.pdf         ← Book PDF
+│   └── gaviewer.pdf       ← GAViewer manual
+├── figures/               ← GAViewer .g scripts (Ch 1-23)
+├── gaviewer                ← GAViewer executable
+└── run_ex.sh              ← Helper script to run examples
+```
 
 ## Building
 
