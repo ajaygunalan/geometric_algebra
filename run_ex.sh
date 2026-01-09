@@ -10,15 +10,13 @@ fi
 CHAP=$1
 EX=$2
 
-# Construct the path
-# Examples are in build/chap<N>/ex<M>/chap<N>ex<M>
-TARGET_DIR="build/chap${CHAP}/ex${EX}"
-BINARY="chap${CHAP}ex${EX}"
+# Binary path (CMake build structure)
+BINARY="build/chap${CHAP}/chap${CHAP}ex${EX}"
 
-if [ -f "${TARGET_DIR}/${BINARY}" ]; then
+if [ -f "${BINARY}" ]; then
     echo "Running Chapter ${CHAP}, Example ${EX}..."
-    cd "${TARGET_DIR}" && "./${BINARY}"
+    "./${BINARY}"
 else
-    echo "Error: Binary not found at ${TARGET_DIR}/${BINARY}"
-    echo "Note: You might need to compile this chapter first."
+    echo "Error: Binary not found at ${BINARY}"
+    echo "Build with: cd build && cmake ../src && make"
 fi

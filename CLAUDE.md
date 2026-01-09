@@ -5,11 +5,12 @@
 This is a Geometric Algebra learning project based on the book "Geometric Algebra for Computer Science".
 
 **Code Structure:**
-- `src/ga_sandbox-1.0.7/chap*/EXERCISES.md` - **ALL exercises** from each chapter (152 total for Ch2-8)
-- `src/ga_sandbox-1.0.7/chap*/ex*/` - C++ examples (some complete, some have TODOs)
-- `src/ga_sandbox-1.0.7/solutions/` - Completed exercise solutions
+- `src/chap*/EXERCISES.md` - **ALL exercises** from each chapter (152 total for Ch2-8)
+- `src/chap*/ex*/` - C++ examples (some complete, some have TODOs)
+- `src/chap*/solutions/` - Completed exercise solutions (moved into chapter folders)
 - `docs/ch_*/` - Full chapter markdown with theory
-- `data/figures/` - GAViewer scripts for interactive figures
+- `docs/gasandbox_api.md` - GA Sandbox API reference
+- `figures/` - GAViewer scripts for interactive figures
 
 **Exercise Types:**
 - `Drill` - Computational practice
@@ -18,6 +19,15 @@ This is a Geometric Algebra learning project based on the book "Geometric Algebr
 - `Calculation` - Math from text (code instead of pen/paper)
 
 **User Goal:** Implement ALL exercises from chapters 2-8, including mathematical calculations as code.
+
+## Build System
+
+Uses CMake. To build:
+```bash
+cd build
+cmake ../src
+make -j$(nproc)
+```
 
 ## Commit Messages
 High-level, 2-3 lines max:
@@ -58,5 +68,35 @@ Your context window will be automatically compacted as it approaches its limit, 
 ## Private Repos (Ref Indexed)
 
 
-**Adding New Dependencies:**
-When discovering a domain-specific library via Exa, ask user: "Found [library]. Add to Ref as private repo for faster access?"
+## GA Sandbox API Cheatsheet
+
+The library is in `src/libgasandbox/` (123 files, 70k+ lines). Full reference: `docs/gasandbox_api.md`
+
+### Types
+`vector`, `bivector`, `trivector`, `rotor`, `mv` (general multivector)
+
+### Key Functions
+```cpp
+dual(x)      // Duality: dual(vector)→bivector, dual(bivector)→vector
+inverse(x)   // Multiplicative inverse
+unit_e(x)    // Normalize (Euclidean)
+_vector(x)   // Cast mv to vector
+_Float(x)    // Extract scalar value
+```
+
+### Operators
+```cpp
+a ^ b        // Outer product (wedge)
+a << b       // Left contraction
+a * b        // Geometric product
+```
+
+### Component Access
+```cpp
+v.e1(), v.e2(), v.e3()           // Vector components
+B.e1e2(), B.e1e3(), B.e2e3()     // Bivector components
+T.e1e2e3()                       // Trivector component
+```
+
+### Constants
+`e1`, `e2`, `e3` (basis vectors), `I3`, `I3i` (pseudoscalar and inverse)
