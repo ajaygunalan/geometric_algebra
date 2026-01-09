@@ -1,0 +1,29 @@
+# Build outputs
+build/
+
+# Python virtual environment
+ga_env/
+
+# Large binaries
+gaviewer
+
+# PDFs (large files - keep in local only)
+*.pdf
+docs/chapters/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Compiled objects
+*.o
+*.a
+*.so
+
+# Editor backups
+*~
+*.swp
