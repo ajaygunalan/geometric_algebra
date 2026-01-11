@@ -13,15 +13,24 @@ Learning project based on "Geometric Algebra for Computer Science" (GA4CS).
 
 | Ch | Title | Examples |
 |----|-------|----------|
-| 2 | [Spanning Oriented Subspaces](src/chap2/) | 3 (+1 solution) |
-| 3 | [Linear Algebra](src/chap3/) | 4 (+1 solution) |
-| 4 | [Linear Transformations](src/chap4/) | 3 |
-| 5 | [Intersection & Union](src/chap5/) | 3 |
-| 6 | [Geometric Product](src/chap6/) | 2 (+1 solution) |
-| 7 | [Versors](src/chap7/) | 5 (+2 solutions) |
-| 8 | [Geometric Differentiation](src/chap8/) | — |
+| 1 | Introduction | 1 |
+| 2 | Spanning Oriented Subspaces | 3 (+1 solution) |
+| 3 | Linear Algebra | 4 (+1 solution) |
+| 4 | Linear Transformations | 3 |
+| 5 | Intersection & Union | 3 |
+| 6 | Geometric Product | 2 (+1 solution) |
+| 7 | Versors | 5 (+2 solutions) |
+| 10 | Vector Space Model | 3 |
+| 11 | Homogeneous Model | 4 (+1 solution) |
+| 12 | Transformations (Homogeneous) | 3 |
+| 13 | Conformal Model | 4 (+1 solution) |
+| 14 | Conformal Primitives | 4 (+1 solution) |
+| 15 | Conformal Constructions | 3 |
+| 16 | Conformal Transformations | 4 |
 
-See each chapter's README.md for details.
+**Total: 47 examples + 7 solutions = 54 executables**
+
+Run `./run_ex.sh` to see all examples with descriptions.
 
 **Run GAViewer:**
 ```bash
@@ -74,7 +83,29 @@ Not all book figures are interactive. When you run `fig(chapter)`, you'll see:
 cd build && cmake ../src && make -j$(nproc)
 ```
 
-## Dependencies (Ubuntu)
+## Dependencies (Ubuntu 24.04)
+
+### Install all dependencies
 ```bash
-sudo apt-get install cmake build-essential libfltk1.3-dev freeglut3-dev libgl1-mesa-dev libglu1-mesa-dev
+# Core dependencies (required for all examples)
+sudo apt-get install -y \
+    build-essential cmake pkg-config \
+    libgl1-mesa-dev libglu1-mesa-dev \
+    freeglut3-dev libfltk1.3-dev libantlr-dev
+
+# OpenCV (optional - for 4 examples: 10-3, 11-2, 12-2, 14-4)
+sudo apt-get install -y libopencv-dev
 ```
+
+### Package details
+| Package | Purpose |
+|---------|---------|
+| build-essential | C++ compiler (g++) |
+| cmake | Build system |
+| pkg-config | Dependency detection |
+| libgl1-mesa-dev | OpenGL development files |
+| libglu1-mesa-dev | OpenGL Utility Library |
+| freeglut3-dev | GLUT (windowing/input) |
+| libfltk1.3-dev | FLTK GUI toolkit |
+| libantlr-dev | ANTLR 2.x C++ runtime (for parsers) |
+| libopencv-dev | Computer vision (optional) |

@@ -360,7 +360,7 @@ int LoadData() {
 	} catch (const std::string &) {
 		try {
 			// try alternative path, when called from inside visual studio:
-			g_extCalibState = readCalibrationData("../chap10/ex3/calibration_data.txt");
+			g_extCalibState = readCalibrationData("src/chap10/ex3/calibration_data.txt");
 		} catch (const std::string &str) {
 			printf("Error: %s\n", str.c_str());
 			return -1;

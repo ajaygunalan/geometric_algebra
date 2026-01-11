@@ -310,7 +310,7 @@ void loadRawImage(const char *filename) {
 	FILE *F = fopen(filename, "rb");
 	if (F == NULL) {
 		char altName[1024];
-		sprintf(altName, "../chap3/ex4/%s", filename);
+		sprintf(altName, "src/chap3/ex4/%s", filename);
 		F = fopen(altName, "rb");
 		if (F == NULL) {
 			fprintf(stderr, "Could not open '%s'. This file should be in the current directory for this example to work!\n", filename);

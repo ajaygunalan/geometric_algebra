@@ -361,7 +361,7 @@ int LoadData() {
 		g_opticalCaptureData = readOpticalData(filename);
 	} catch (const std::string &) {
 		try {
-			g_opticalCaptureData = readOpticalData("../chap12/ex3/silly_moves.txt");
+			g_opticalCaptureData = readOpticalData("src/chap12/ex3/silly_moves.txt");
 		} catch (const std::string &str) {
 			printf("Error: %s\n", str.c_str());
 			return -1;

@@ -9,6 +9,7 @@ target_link_libraries(gasandbox
     OpenGL::GL
     OpenGL::GLU
     GLUT::GLUT
+    antlr
 )
 
 if(FLTK_FOUND)

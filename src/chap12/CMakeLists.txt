@@ -8,4 +8,9 @@ if(OpenCV_FOUND)
     target_link_libraries(chap12ex2 gasandbox ${OpenCV_LIBS})
 endif()
 
-# chap12ex3 requires ANTLR - skip (ANTLR 2.x not available on modern systems)
+# chap12ex3 requires ANTLR (linked via gasandbox)
+add_executable(chap12ex3
+    ex3/chap12ex3.cpp
+    ex3/readopticaldata.cpp
+    ex3/reconstruct.cpp)
+target_link_libraries(chap12ex3 gasandbox)
